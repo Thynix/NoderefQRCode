@@ -37,12 +37,16 @@ public class RenderQR extends Toadlet {
 	}
 
 	public void handleMethodGET(URI uri, HTTPRequest request, ToadletContext ctx)
-	       throws ToadletContextClosedException, IOException, WriterException
+	       throws ToadletContextClosedException, IOException
 	{
+		try {
 		QRCodeWriter qrCodeWriter = new QRCodeWriter();
 		BitMatrix matrix = qrCodeWriter.encode(node.exportDarknetPublicFieldSet().toString(), BarcodeFormat.QR_CODE, dimension, dimension);
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		MatrixToImageWriter.writeToStream(matrix, "png", outputStream);
 		writeReply(ctx, 200, "image/png", "OK", outputStream.toByteArray(), 0, outputStream.size());
+		} catch (WriterException e) {
+			writeInternalError(e, ctx);
+		}
 	}
 }
