@@ -27,13 +27,14 @@ public class RenderQR extends Toadlet {
 	 * Width and height of rendered QR code.
 	 */
 	static final int dimension = 500;
+	static final String PATH = "/qr/render";
 
 	public RenderQR(HighLevelSimpleClient client, Node node) {
 		super(client);
 		this.node = node;
 	}
 	public String path() {
-		return "/qr/render/";
+		return PATH;
 	}
 
 	public void handleMethodGET(URI uri, HTTPRequest request, ToadletContext ctx)
