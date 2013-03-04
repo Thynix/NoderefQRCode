@@ -48,6 +48,6 @@ public class Main implements FredPlugin, FredPluginThreadless, FredPluginVersion
 		addByQR = new AddByQR(client, l10n, pr);
 
 		container.register(renderQR, null, renderQR.path(), true, false);
-		container.register(addByQR, "FProxyToadlet.categoryFriends", addByQR.path(), false, "AddPage", "AddPage", false, addByQR, l10n);
+		container.register(addByQR, "FProxyToadlet.categoryFriends", addByQR.path(), true, "AddPage", "AddPage", false, addByQR, l10n);
 	}
 }
