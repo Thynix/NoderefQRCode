@@ -1,5 +1,7 @@
 package com.asksteved.noderefqrcode;
 
+import com.asksteved.noderefqrcode.webui.RenderQR;
+
 import freenet.clients.http.Toadlet;
 import freenet.clients.http.ToadletContainer;
 import freenet.pluginmanager.FredPlugin;

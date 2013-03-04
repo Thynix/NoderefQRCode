@@ -1,4 +1,4 @@
-package com.asksteved.noderefqrcode;
+package com.asksteved.noderefqrcode.webui;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
